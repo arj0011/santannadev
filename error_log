@@ -1,0 +1,1 @@
+[12-Oct-2017 07:55:23 UTC] PHP Fatal error:  Call to a member function result() on boolean in /home/elvaluecom/public_html/santannadev/application/models/Common_model.php on line 160

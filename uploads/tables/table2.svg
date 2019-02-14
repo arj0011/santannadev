@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="500px"
+	 height="500px" viewBox="0 0 500 500" enable-background="new 0 0 500 500" xml:space="preserve">
+<g id="Layer_1" display="none">
+	
+		<image display="inline" overflow="visible" width="645" height="585" xlink:href="Ellipse-1.png"  transform="matrix(0.9769 0 0 0.9769 -65.5 -33.5)">
+	</image>
+</g>
+<g id="Layer_2">
+	<path fill="#9A9A9A" d="M181.624,478.68l16.367-34.831h100.297l16.576,34.831C314.864,478.68,252.545,511.204,181.624,478.68z"/>
+	<path d="M186.555,399.366h123.378c0,0-2.728,36.09-9.862,46.582c0,0-52.667,34.202-103.235-2.098
+		C196.836,443.849,189.702,435.036,186.555,399.366z"/>
+	<path fill="#9A9A9A" d="M314.262,23.496l-16.343,34.843l-100.297,0.069l-16.6-34.82C181.022,23.588,243.318-8.978,314.262,23.496z"
+		/>
+	<path d="M309.331,102.814l-123.378,0.085c0,0,2.703-36.092,9.83-46.588c0,0,52.643-34.238,103.236,2.027
+		C299.019,58.338,306.159,67.146,309.331,102.814z"/>
+	<circle fill="#9A9A9A" cx="248.244" cy="250.734" r="162.126"/>
+</g>
+</svg>

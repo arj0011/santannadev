@@ -1,0 +1,208 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2><?php echo (isset($headline)) ? ucwords($headline) : ""?></h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="<?php echo site_url('admin/dashboard');?>"><?php echo lang('home');?></a>
+            </li>
+            <li>
+                <a href="<?php echo site_url('booking');?>"><?php echo lang('booking');?></a>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeIn">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <!-- <div class="ibox-title">
+                     <div class="btn-group">
+                        <a href="javascript:void(0)"  onclick="open_modal('booking')" class="btn btn-primary">
+                            <?php echo lang('add_booking');?>
+                        <i class="fa fa-plus"></i>
+                        </a>
+                       
+                    </div> 
+                   
+                </div> -->
+                <?php $user_id = $this->uri->segment(3); 
+                if(empty($user_id)){?>
+                 <form class="well" id="date_sortinng" action="<?php echo base_url('booking/index'); ?>" method="post">
+         
+             <div class="row">
+                   <div class="form-group clearfix ">
+                     
+                    <label class="control-label col-lg-2" for="email">
+                   <?php echo lang('select_date');?>
+                   
+                    </label>
+                  <div class="col-lg-4">
+                      <input class="form-control" type="text" name="start_date" id="start_date" value="<?php echo $booking['start_date']; ?>" placeholder="<?php echo lang('from_date');?>" readonly="readonly"></input>
+                  </div>
+                    <div class="col-lg-4">
+                        <input class="form-control" type="text" name="end_date" id="end_date" value="<?php echo $booking['end_date']; ?>" placeholder="<?php echo lang('to_date');?>" readonly="readonly"></input>
+                  </div>
+                   <div class="col-lg-2">
+                      <input type="submit"  class="btn btn-primary" type="submit" value="<?php echo lang('submit_btn');?>" name="submit" id="submit">
+                      
+                      
+                  </div>
+                  </div>
+                  </div>
+                  <div class="form-group clearfix ">
+                       
+                 </div>
+                      </form>
+                 <?php }else{ ?>
+
+                  <form class="well" id="date_sortinng" action="<?php echo base_url('booking/index/').$user_id; ?>" method="post">
+         
+             <div class="row">
+                   <div class="form-group clearfix ">
+                     
+                    <label class="control-label col-lg-2" for="email">
+                   Select date
+                   
+                    </label>
+                  <div class="col-lg-4">
+                      <input class="form-control" type="text" name="start_date" id="start_date" value="<?php echo $booking['start_date']; ?>" placeholder="From Date" readonly="readonly"></input>
+                  </div>
+                    <div class="col-lg-4">
+                        <input class="form-control" type="text" name="end_date" id="end_date" value="<?php echo $booking['end_date']; ?>" placeholder="To Date" readonly="readonly"></input>
+                  </div>
+
+                  </div>
+                  </div>
+                  <div class="form-group clearfix ">
+                       <div class="col-lg-offset-2 col-lg-10">
+                      <input type="submit"  class="btn btn-primary" type="submit" value="Submit" name="submit" id="submit">
+                      
+                      
+                  </div>
+                 </div>
+                      </form>
+
+                  <?php }?>
+                <div class="ibox-content">
+                 <div class="row">
+                      <?php $message = $this->session->flashdata('success');
+                            if(!empty($message)):?><div class="alert alert-success">
+                                <?php echo $message;?></div><?php endif; ?>
+                       <?php $error = $this->session->flashdata('error');
+                            if(!empty($error)):?><div class="alert alert-danger">
+                                <?php echo $error;?></div><?php endif; ?>
+                     <div id="message"></div>
+                    <div class="col-lg-12" style="overflow-x: auto">
+                    <table class="table table-bordered table-responsive" id="common_datatable_booking">
+                        <thead>
+                            <tr>
+                                <th><?php echo lang('serial_no');?></th>
+                                <th><?php echo lang('user_name');?></th>
+                                <th style="width:15%"><?php echo lang('email');?></th>
+                                <th><?php echo lang('contact_number');?></th>
+                                <th><?php echo lang('place');?></th>
+                                <th><?php echo lang('no_of_persons');?></th>
+                                <th><?php echo lang('booking_details');?></th>
+                                <th><?php echo lang('reservation_date');?></th>
+                                <!-- <th><?php echo lang('status');?></th> -->
+                                <th style="width:5%"><?php echo lang('confirmation');?></th>
+                                <th><?php echo lang('action');?></th>
+                               
+                            </tr>
+                        </thead>
+                        <tbody>
+                          <?php
+                          
+                            if (isset($list) && !empty($list)):
+                                $rowCount = 0;
+
+                                foreach ($list as $rows):
+                                  $class='';
+                                    $rowCount++;
+                             
+                             if($rows['status']==1)
+                             {
+                              $class="style='color:#0080ff'";
+                              }
+                             ?>
+
+                            <tr <?php echo $class;?>>
+                            <td><?php echo $rowCount;  ?></td>            
+                            <td><?php echo $rows['name'];?></td>
+                            <td><?php echo $rows['email'];?></td>
+                            <td><?php echo $rows['phone_number']?></td>
+                            <td><?php echo $rows['place']?></td>
+                            <td><?php echo $rows['no_of_persons']?></td>
+                             <td style="width:25%;"><?php
+                             if(strlen($rows['booking_details'])>120){
+                                  $content=$rows['booking_details'];
+                                  echo mb_substr($rows['booking_details'],0,120,'UTF-8').'...<br>';
+                                  ?>
+                                  <a style="cursor:pointer" onclick="show_message('<?php echo base64_encode($content);?>')"><?php echo lang('view');?></a>
+                                  <?php
+                                }
+                                else if(strlen($rows['booking_details'])>0){
+                                  echo $rows['booking_details'];
+                                }
+                                
+                            ?></td>
+                           
+                            <td><?php echo convertDateTime($rows['reservation_date'])?></td>
+
+                            <td>  <?php 
+
+                              if($rows['status'] == 1){
+                                echo  "Confirm";
+                              }else if($rows['status'] == 2){
+                                ?>
+                                <a href="javascript:void(0)" class="btn btn-md btn-primary" onclick="redirectFn('tablebooking','index','<?php echo encoding($rows['id'])?>');"><i class= "fa fa-arrow-circle-right fa-lg"></i></a>
+                              
+                            <?php  }else{ ?>
+                              <a href="javascript:void(0)" class="btn btn-md btn-primary" onclick="redirectFn('tablebooking','index','<?php echo encoding($rows['id'])?>');"><i class= "fa fa-arrow-circle-right fa-lg"></i></a>
+
+                           <?php }
+                            ?></td>
+
+                            <!--  <td>
+                                <select id="status" update_id="<?php echo $rows['id'];?>" name="status" size="1" required ">
+                           
+                              <option value="1" <?php if($rows['status'] == 1) echo "selected"; ?>>Confirm</option>
+                              <option value="2" <?php if($rows['status'] == 2) echo "selected"; ?>>Pending</option>
+                              <option value="3" <?php if($rows['status'] == 3) echo "selected"; ?>>Cancel</option>
+                             
+                             </select>
+                            </td> -->
+
+
+                            <td class="actions">
+                             <a href="javascript:void(0)" class="on-default edit-row" onclick="editFn('booking','booking_edit','<?php echo encoding($rows['id'])?>');"><img width="20" src="<?php echo base_url().EDIT_ICON;?>" /></a>
+                            <a href="javascript:void(0)" onclick="deleteFn('booking','id','<?php echo encoding($rows['id']); ?>')" class="on-default edit-row text-danger"><img width="20" src="<?php echo base_url().DELETE_ICON;?>" /></a><br/>
+
+                            <a href="javascript:void(0)" class="on-default edit-row" onclick="viewFn('booking','booking_view','<?php echo encoding($rows['id'])?>');"><img width="20" src="<?php echo base_url().VIEW_ICON;?>" /></a>
+
+                              <!-- <?php if($rows['status'] == 1): ?>
+                            <a href="javascript:void(0)" class="on-default edit-row" onclick="redirectFn('tablebooking','index','<?php echo encoding($rows['id'])?>');"><img src="<?php echo base_url();?>assets/img/success.png" height="20" width="20"></a>
+                          <?php endif;?> -->
+                            </td>
+                           
+                            
+                           
+                            </tr>
+                            <?php endforeach; endif;?>
+                        </tbody>
+                    </table>
+                  </div>
+                </div>
+            </div>
+                <div id="form-modal-box"></div>
+        </div>
+    </div>
+</div>
+
+<div id="message_div">
+    <span id="close_button"><img src="<?php echo base_url();?>assets/img/close.png" onclick="close_message();"></span>
+    <div id="message_container"></div>
+</div>

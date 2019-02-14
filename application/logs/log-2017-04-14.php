@@ -1,0 +1,41 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2017-04-14 05:43:55 --> 404 Page Not Found: /index
+ERROR - 2017-04-14 12:05:07 --> 404 Page Not Found: /index
+ERROR - 2017-04-14 12:05:28 --> Could not find the language line "dashbaord"
+ERROR - 2017-04-14 12:05:28 --> Could not find the language line "user_category"
+ERROR - 2017-04-14 12:05:35 --> Could not find the language line "dashbaord"
+ERROR - 2017-04-14 12:05:35 --> Could not find the language line "user_category"
+ERROR - 2017-04-14 12:05:35 --> Could not find the language line "ceo_message_en_validation"
+ERROR - 2017-04-14 12:05:35 --> Could not find the language line "ceo_message_el_validation"
+ERROR - 2017-04-14 12:05:35 --> Could not find the language line "phone_number_required_validation"
+ERROR - 2017-04-14 12:05:35 --> Could not find the language line "phone_number_min_validation"
+ERROR - 2017-04-14 12:05:35 --> Could not find the language line "phone_number_max_validation"
+ERROR - 2017-04-14 12:05:35 --> Could not find the language line "app_email_required_validation"
+ERROR - 2017-04-14 12:05:35 --> Could not find the language line "app_email_validation"
+ERROR - 2017-04-14 12:05:35 --> Could not find the language line "file"
+ERROR - 2017-04-14 12:08:47 --> Could not find the language line "dashbaord"
+ERROR - 2017-04-14 12:08:47 --> Could not find the language line "user_category"
+ERROR - 2017-04-14 15:25:38 --> 404 Page Not Found: /index
+ERROR - 2017-04-14 15:25:38 --> 404 Page Not Found: /index
+ERROR - 2017-04-14 15:25:55 --> Could not find the language line "dashbaord"
+ERROR - 2017-04-14 15:25:55 --> Could not find the language line "user_category"
+ERROR - 2017-04-14 15:26:41 --> 404 Page Not Found: /index
+ERROR - 2017-04-14 15:26:49 --> Could not find the language line "dashbaord"
+ERROR - 2017-04-14 15:26:49 --> Could not find the language line "user_category"
+ERROR - 2017-04-14 15:26:57 --> Could not find the language line "dashbaord"
+ERROR - 2017-04-14 15:26:57 --> Could not find the language line "user_category"
+ERROR - 2017-04-14 15:27:07 --> Could not find the language line "dashbaord"
+ERROR - 2017-04-14 15:27:07 --> Could not find the language line "user_category"
+ERROR - 2017-04-14 15:27:07 --> Could not find the language line "offer"
+ERROR - 2017-04-14 15:27:07 --> Could not find the language line "offer"
+ERROR - 2017-04-14 15:27:07 --> Could not find the language line "inactive_message"
+ERROR - 2017-04-14 15:27:07 --> Could not find the language line "active_message"
+ERROR - 2017-04-14 15:27:07 --> Could not find the language line "change_status_success"
+ERROR - 2017-04-14 15:27:12 --> Could not find the language line "dashbaord"
+ERROR - 2017-04-14 15:27:12 --> Could not find the language line "user_category"
+ERROR - 2017-04-14 15:27:12 --> Could not find the language line "offer"
+ERROR - 2017-04-14 15:27:12 --> Could not find the language line "offer"
+ERROR - 2017-04-14 15:27:12 --> Could not find the language line "inactive_message"
+ERROR - 2017-04-14 15:27:12 --> Could not find the language line "active_message"
+ERROR - 2017-04-14 15:27:12 --> Could not find the language line "change_status_success"
